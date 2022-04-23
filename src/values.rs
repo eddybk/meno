@@ -3,7 +3,7 @@
 pub mod Values {
     pub type Number = f64;
 
-    pub enum ValueD {
+    pub enum ValueN {
         L(Number),
         R(Number)
     }
@@ -12,8 +12,39 @@ pub mod Values {
         R(String)
     }
     pub enum Value {
-        D(ValueD),
+        N(ValueN),
         S(ValueS)
+    }
+    pub enum Side {
+        L,
+        R
+    }
+
+    impl Value {
+        pub fn new(value: String, side: Side) -> Value{
+            match value.parse::<f64>() {
+                Ok(v) => {
+                    match side {
+                        Side::L => {
+                            return Value::N(ValueN::L(v));
+                        }
+                        Side::R => {
+                            return Value::N(ValueN::R(v));
+                        }
+                    }
+                }
+                Err(_) => {
+                    match side {
+                        Side::L => {
+                            return Value::S(ValueS::L(value));
+                        }
+                        Side::R => {
+                            return Value::S(ValueS::R(value));
+                        }
+                    }
+                },
+            }
+        }
     }
 
     pub struct Variables {

@@ -2,11 +2,11 @@ pub(crate) mod values;
 pub(crate) mod statements;
 
 fn main() {
-    use values::Values::{Value, ValueS, ValueD};
+    use values::Values::{Value, ValueS, ValueN, Side};
 
 
-    let value = Value::D(ValueD::R(3.));
-
+    let value = Value::new(String::from("34"), Side::R);
+    
     /*match value {
         Value::D(decimal) => {
             match decimal {
