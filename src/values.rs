@@ -1,11 +1,11 @@
 #![allow(dead_code)]
 
 pub mod Values {
-    pub type Decimal = f64;
+    pub type Number = f64;
 
     pub enum ValueD {
-        L(Decimal),
-        R(Decimal)
+        L(Number),
+        R(Number)
     }
     pub enum ValueS {
         L(String),

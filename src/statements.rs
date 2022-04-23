@@ -1,8 +1,8 @@
 pub mod Statements {
-    use crate::values::Values::{Value as Variable, Decimal};
+    use crate::values::Values::{Value as Variable, Number};
 
     pub enum Value {
-        N(Decimal),
+        N(Number),
         S(String)
     }
     pub struct Expression {
@@ -10,7 +10,14 @@ pub mod Statements {
         aliases: [String]
     }
 
+    pub enum Type {
+        Function,
+        String,
+        Number
+    }
+
     pub struct Declaration {
-        values: (Variable, Variable)
+        values: (Variable, Variable),
+        dec_type: Type
     }
 }
