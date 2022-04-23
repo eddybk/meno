@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-pub mod Values {
+pub mod values {
     pub type Number = f64;
 
     pub enum ValueN {

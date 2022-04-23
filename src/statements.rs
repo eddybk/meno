@@ -1,5 +1,7 @@
-pub mod Statements {
-    use crate::values::Values::{Value as Variable, Number};
+#![allow(dead_code)]
+
+pub mod statements {
+    use crate::values::values::{Value as Variable, Number};
 
     pub enum Value {
         N(Number),
