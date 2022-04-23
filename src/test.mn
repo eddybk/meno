@@ -1,0 +1,9 @@
+let f(x) = sqrt(x)
+
+let g(x):
+    let y = f(x)
+    let z = 0
+    f(y * z)
+
+
+f(g(3))
